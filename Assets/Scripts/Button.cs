@@ -51,5 +51,15 @@ public class Button : MonoBehaviour //특정 버튼을 누르면 주어진 코드가 동작하는 
 
         img.SetActive(true); //사용자가 클릭한 옷 그림 활성화
     }
-    
+
+    public void on() //오브젝트 위에 마우스를 올리면 (choose_stage Scene)
+    {
+        transform.GetChild(0).gameObject.SetActive(true); //child 0을 활성화
+    }
+
+    public void off() //오브젝트에서 마우스를 내리면 (choose_stage Scene)
+    {
+        transform.GetChild(0).gameObject.SetActive(false); //child 0을 비활성화
+    }
+
 }

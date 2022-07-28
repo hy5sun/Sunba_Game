@@ -2,19 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class closet : MonoBehaviour
+public class closet : MonoBehaviour //옷장 속 화살표를 누르면 카테고리가 바뀌는 스크립트
 {
     public GameObject hair;
-    public GameObject top;
-    public GameObject bottom;
-    public GameObject acc;
     public GameObject shoes;
     public GameObject[] closett;
 
     public void right()
     {
-        GameObject thisis=shoes;
-        GameObject next=hair;
+        GameObject thisis = shoes;
+        GameObject next = hair;
 
         for(int i=0;i<4;i++)
         {
@@ -30,7 +27,7 @@ public class closet : MonoBehaviour
     }
 
 
-        public void left() {
+    public void left() {
 
         GameObject thisis = hair;
         GameObject next = shoes;
