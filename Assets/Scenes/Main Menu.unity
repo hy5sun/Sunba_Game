@@ -1122,7 +1122,7 @@ GameObject:
   - component: {fileID: 2063906161}
   - component: {fileID: 2063906160}
   m_Layer: 5
-  m_Name: HTP_Button
+  m_Name: Description_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
