@@ -1,65 +1,89 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; //¾À ÀüÈ¯
-using UnityEngine.EventSystems; //Ä¿¼­ À§Ä¡ °¨Áö
+using UnityEngine.SceneManagement; //ì”¬ ì „í™˜
+using UnityEngine.EventSystems; //ì»¤ì„œ ìœ„ì¹˜ ê°ì§€
 
-public class Button : MonoBehaviour //Æ¯Á¤ ¹öÆ°À» ´©¸£¸é ÁÖ¾îÁø ÄÚµå°¡ µ¿ÀÛÇÏ´Â ½ºÅ©¸³Æ®
+public class Button : MonoBehaviour //íŠ¹ì • ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ ì£¼ì–´ì§„ ì½”ë“œê°€ ë™ì‘í•˜ëŠ” ìŠ¤í¬ë¦½íŠ¸
 {
-    [SerializeField] GameObject img; //³ªÅ¸³ª°Ô ÇÒ ÀÌ¹ÌÁö ÁöÁ¤ (¿Ê ¼±ÅÃÇÒ ¶§)
+    [SerializeField] GameObject img; //ë‚˜íƒ€ë‚˜ê²Œ í•  ì´ë¯¸ì§€ ì§€ì • (ì˜· ì„ íƒí•  ë•Œ)
 
-    public void OnClickStart() //°ÔÀÓ½ÃÀÛ ¹öÆ°À» ´©¸£¸é
+    public void OnClickStart() //ê²Œì„ì‹œì‘ ë²„íŠ¼ì„ ëˆ„ë¥´ë©´
     {
-        Debug.Log("°ÔÀÓÀ» ½ÃÀÛÇÕ´Ï´Ù!");
-        SceneManager.LoadScene("Choose_stage"); //½ºÅä¸® °í¸£´Â Ã¢À¸·Î ÀÌµ¿
+        Debug.Log("ê²Œì„ì„ ì‹œì‘í•©ë‹ˆë‹¤!");
+        SceneManager.LoadScene("Choose_stage"); //ìŠ¤í† ë¦¬ ê³ ë¥´ëŠ” ì°½ìœ¼ë¡œ ì´ë™
     }
 
-    public void OnClickHow() //°ÔÀÓ¼³¸í ¹öÆ°À» ´©¸£¸é
+    public void OnClickHow() //ê²Œì„ì„¤ëª… ë²„íŠ¼ì„ ëˆ„ë¥´ë©´
     {
-        Debug.Log("¼³¸íÃ¢À¸·Î ÀÌµ¿ÇÕ´Ï´Ù.");
-        SceneManager.LoadScene("Description"); //¼³¸íÃ¢À¸·Î ÀÌµ¿
+        Debug.Log("ì„¤ëª…ì°½ìœ¼ë¡œ ì´ë™í•©ë‹ˆë‹¤.");
+        SceneManager.LoadScene("Description"); //ì„¤ëª…ì°½ìœ¼ë¡œ ì´ë™
     }
 
-    public void OnClickMain() //Ã³À½À¸·Î ¹öÆ°À» ´©¸£¸é
+    public void OnClickMain() //ì²˜ìŒìœ¼ë¡œ ë²„íŠ¼ì„ ëˆ„ë¥´ë©´
     {
-        Debug.Log("¸ŞÀÎÈ­¸éÀ¸·Î ÀÌµ¿ÇÕ´Ï´Ù.");
-        SceneManager.LoadScene("Main Menu"); //¸ŞÀÎÈ­¸éÀ¸·Î ÀÌµ¿
+        Debug.Log("ë©”ì¸í™”ë©´ìœ¼ë¡œ ì´ë™í•©ë‹ˆë‹¤.");
+        SceneManager.LoadScene("Main Menu"); //ë©”ì¸í™”ë©´ìœ¼ë¡œ ì´ë™
     }
 
-    public void OnClickStory() //»ç¿ëÀÚ°¡ ½ºÅä¸®¸¦ ¼±ÅÃÇÏ¸é
+    public void OnClickStory() //ì‚¬ìš©ìê°€ ìŠ¤í† ë¦¬ë¥¼ ì„ íƒí•˜ë©´
     {
-        Debug.Log("Àá±ñ¸¸ ±â´Ù·áºÁ~");
-        SceneManager.LoadScene("main_clothes"); //¿Ê ÀÔÈ÷´Â °ÔÀÓ Ã¢À¸·Î ÀÌµ¿
+        Debug.Log("ì ê¹ë§Œ ê¸°ë‹¤ë£Œë´~");
+        SceneManager.LoadScene("main_clothes"); //ì˜· ì…íˆëŠ” ê²Œì„ ì°½ìœ¼ë¡œ ì´ë™
     }
 
-    public void OnClickreplay() //»ç¿ëÀÚ°¡ ´Ù½ÃÇÏ±â ¹öÆ°À» ´©¸£¸é
+    public void ending() //ì‚¬ìš©ìê°€ ì™„ë£Œ ë²„íŠ¼ì„ ëˆ„ë¥´ë©´
     {
-        SceneManager.LoadScene("Choose_stage"); //½ºÅä¸® ¼±ÅÃ È­¸éÀ¸·Î ÀÌµ¿
+        Debug.Log("ì ê¹ë§Œ ê¸°ë‹¤ë£Œë´~");
+        SceneManager.LoadScene("resultscene"); //ê²°ê³¼ ë°œí‘œ ì°½ìœ¼ë¡œ ì´ë™
     }
 
-    public void OnClickClothes() //»ç¿ëÀÚ°¡ ¿øÇÏ´Â ¿ÊÀ» Å¬¸¯ÇÏ¸é
+
+    public void OnClickClothes() //ì‚¬ìš©ìê°€ ì›í•˜ëŠ” ì˜·ì„ í´ë¦­í•˜ë©´
     {
         string tagg = img.tag;
+        GameObject set = GameObject.Find("top").transform.Find("top3").gameObject;
+
+        if (tagg == "bottom") //í•˜ì˜ì¼ê²½ìš° ì„¸íŠ¸ ë¹„í™œì„±í™”
+            set.gameObject.SetActive(false);
+
         var t = GameObject.FindGameObjectsWithTag(tagg);
-        for(int i = 0; i < t.Length; i++)
+        for (int i = 0; i < t.Length; i++)
         {
-            if(t[i].gameObject.activeSelf == true){
-                t[i].gameObject.SetActive(false);
-                break;
-            }
+            t[i].gameObject.SetActive(false);
         }
 
-        img.SetActive(true); //»ç¿ëÀÚ°¡ Å¬¸¯ÇÑ ¿Ê ±×¸² È°¼ºÈ­
+        img.SetActive(true); //ì‚¬ìš©ìê°€ í´ë¦­í•œ ì˜· ê·¸ë¦¼ í™œì„±í™”
+
+        if (set.gameObject.activeSelf == true)
+        { //ìƒì˜ê°€ ì„¸íŠ¸ì¸ê²½ìš° í•˜ì˜ ë¹„í™œì„±í™”
+            t = GameObject.FindGameObjectsWithTag("bottom");
+            for (int i = 0; i < t.Length; i++)
+            {
+                t[i].gameObject.SetActive(false);
+            }
+        }
     }
 
-    public void on() //¿ÀºêÁ§Æ® À§¿¡ ¸¶¿ì½º¸¦ ¿Ã¸®¸é (choose_stage Scene)
+    public void on() //ì˜¤ë¸Œì íŠ¸ ìœ„ì— ë§ˆìš°ìŠ¤ë¥¼ ì˜¬ë¦¬ë©´ (choose_stage Scene)
     {
-        transform.GetChild(0).gameObject.SetActive(true); //child 0À» È°¼ºÈ­
+        transform.GetChild(0).gameObject.SetActive(true); //child 0ì„ í™œì„±í™”
     }
 
-    public void off() //¿ÀºêÁ§Æ®¿¡¼­ ¸¶¿ì½º¸¦ ³»¸®¸é (choose_stage Scene)
+    public void off() //ì˜¤ë¸Œì íŠ¸ì—ì„œ ë§ˆìš°ìŠ¤ë¥¼ ë‚´ë¦¬ë©´ (choose_stage Scene)
     {
-        transform.GetChild(0).gameObject.SetActive(false); //child 0À» ºñÈ°¼ºÈ­
+        transform.GetChild(0).gameObject.SetActive(false); //child 0ì„ ë¹„í™œì„±í™”
     }
-
+    public void resetting()
+    {//ë¦¬ì…‹ë²„íŠ¼ì„ ëˆ„ë¥´ë©´
+        string[] tagg = { "hair", "top", "bottom", "acc", "shoes" };
+        foreach (string e in tagg) {
+            var t = GameObject.FindGameObjectsWithTag(e);
+            for (int i = 0; i < t.Length; i++)
+            {
+                if (t[i].gameObject.activeSelf == true)
+                    t[i].gameObject.SetActive(false);
+            }
+        }
+    }
 }
