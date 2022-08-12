@@ -1,88 +1,112 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; //ì”¬ ì „í™˜
-using UnityEngine.EventSystems; //ì»¤ì„œ ìœ„ì¹˜ ê°ì§€
+using UnityEngine.SceneManagement; //¾À ÀüÈ¯
+using UnityEngine.EventSystems; //Ä¿¼­ À§Ä¡ °¨Áö
 
-public class Button : MonoBehaviour //íŠ¹ì • ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ ì£¼ì–´ì§„ ì½”ë“œê°€ ë™ì‘í•˜ëŠ” ìŠ¤í¬ë¦½íŠ¸
+public class Button : MonoBehaviour //Æ¯Á¤ ¹öÆ°À» ´©¸£¸é ÁÖ¾îÁø ÄÚµå°¡ µ¿ÀÛÇÏ´Â ½ºÅ©¸³Æ®
 {
-    [SerializeField] GameObject img; //ë‚˜íƒ€ë‚˜ê²Œ í•  ì´ë¯¸ì§€ ì§€ì • (ì˜· ì„ íƒí•  ë•Œ)
+    public GameObject img; //³ªÅ¸³ª°Ô ÇÒ ÀÌ¹ÌÁö ÁöÁ¤ (¿Ê ¼±ÅÃÇÒ ¶§)
+    public GameObject story;
+    public static int _score; //ÃÑ Á¡¼ö
+    public static string _stage; //ÇöÀç ½ºÅ×ÀÌÁö (¿Ê °è»êÇÒ ¶§ »ç¿ë)
 
-    public void OnClickStart() //ê²Œì„ì‹œì‘ ë²„íŠ¼ì„ ëˆ„ë¥´ë©´
+    public void OnClickStart() //°ÔÀÓ½ÃÀÛ ¹öÆ°À» ´©¸£¸é
     {
-        Debug.Log("ê²Œì„ì„ ì‹œì‘í•©ë‹ˆë‹¤!");
-        SceneManager.LoadScene("Choose_stage"); //ìŠ¤í† ë¦¬ ê³ ë¥´ëŠ” ì°½ìœ¼ë¡œ ì´ë™
+        Debug.Log("°ÔÀÓÀ» ½ÃÀÛÇÕ´Ï´Ù!");
+        SceneManager.LoadScene("Choose_stage"); //½ºÅä¸® °í¸£´Â Ã¢À¸·Î ÀÌµ¿
     }
 
-    public void OnClickHow() //ê²Œì„ì„¤ëª… ë²„íŠ¼ì„ ëˆ„ë¥´ë©´
+    public void OnClickHow() //°ÔÀÓ¼³¸í ¹öÆ°À» ´©¸£¸é
     {
-        Debug.Log("ì„¤ëª…ì°½ìœ¼ë¡œ ì´ë™í•©ë‹ˆë‹¤.");
-        SceneManager.LoadScene("Description"); //ì„¤ëª…ì°½ìœ¼ë¡œ ì´ë™
+        Debug.Log("¼³¸íÃ¢À¸·Î ÀÌµ¿ÇÕ´Ï´Ù.");
+        SceneManager.LoadScene("Description"); //¼³¸íÃ¢À¸·Î ÀÌµ¿
     }
 
-    public void OnClickMain() //ì²˜ìŒìœ¼ë¡œ ë²„íŠ¼ì„ ëˆ„ë¥´ë©´
+    public void OnClickMain() //Ã³À½À¸·Î ¹öÆ°À» ´©¸£¸é
     {
-        Debug.Log("ë©”ì¸í™”ë©´ìœ¼ë¡œ ì´ë™í•©ë‹ˆë‹¤.");
-        SceneManager.LoadScene("Main Menu"); //ë©”ì¸í™”ë©´ìœ¼ë¡œ ì´ë™
+        Debug.Log("¸ŞÀÎÈ­¸éÀ¸·Î ÀÌµ¿ÇÕ´Ï´Ù.");
+        SceneManager.LoadScene("Main Menu"); //¸ŞÀÎÈ­¸éÀ¸·Î ÀÌµ¿
     }
 
-    public void OnClickStory() //ì‚¬ìš©ìê°€ ìŠ¤í† ë¦¬ë¥¼ ì„ íƒí•˜ë©´
+    public void OnClickStory() //»ç¿ëÀÚ°¡ ½ºÅä¸®¸¦ ¼±ÅÃÇÏ¸é
     {
-        Debug.Log("ì ê¹ë§Œ ê¸°ë‹¤ë£Œë´~");
-        SceneManager.LoadScene("main_clothes"); //ì˜· ì…íˆëŠ” ê²Œì„ ì°½ìœ¼ë¡œ ì´ë™
+        Debug.Log("¿Ê ÀÔÈ÷±â ¾ÀÀ¸·Î ÀÌµ¿Áß!");
+        _stage = story.tag;
+        Debug.Log(_stage);
+
+        SceneManager.LoadScene("main_clothes"); //¿Ê ÀÔÈ÷´Â °ÔÀÓ Ã¢À¸·Î ÀÌµ¿
     }
 
-    public void ending() //ì‚¬ìš©ìê°€ ì™„ë£Œ ë²„íŠ¼ì„ ëˆ„ë¥´ë©´
+    public void ending() //»ç¿ëÀÚ°¡ ¿Ï·á ¹öÆ°À» ´©¸£¸é
     {
-        Debug.Log("ì ê¹ë§Œ ê¸°ë‹¤ë£Œë´~");
-        SceneManager.LoadScene("resultscene"); //ê²°ê³¼ ë°œí‘œ ì°½ìœ¼ë¡œ ì´ë™
+        
+        Debug.Log("¿Ï¼º!!!");
+
+        //¿Ï·á ¹öÆ°À» ´©¸£¸é È°¼ºÈ­ µÇ¾îÀÖ´Â ¿ÀºêÁ§Æ®µéÀÇ Á¡¼ö ÇÕ»êÇÏ±â
+        string[] tagg = { "hair", "bottom", "top", "acc", "shoes" };
+        foreach (string k in tagg)
+        {
+            GameObject[] category = GameObject.FindGameObjectsWithTag(k);
+            
+            for (int i = 0; i < category.Length; i++)
+            {
+                if (category[i].gameObject.activeSelf == true)
+                {
+                    category[i].GetComponent<score>().plusScore(_stage); //score ½ºÅ©¸³Æ® ¼Ó plusScore ÇÔ¼ö ½ÇÇà
+                }
+            }
+        }
+        
+        SceneManager.LoadScene("resultscene"); //°á°ú ¹ßÇ¥ Ã¢À¸·Î ÀÌµ¿
     }
 
 
-    public void OnClickClothes() //ì‚¬ìš©ìê°€ ì›í•˜ëŠ” ì˜·ì„ í´ë¦­í•˜ë©´
+    public void OnClickClothes() //»ç¿ëÀÚ°¡ ¿øÇÏ´Â ¿ÊÀ» Å¬¸¯ÇÏ¸é
     {
         string tagg = img.tag;
         GameObject set = GameObject.Find("top").transform.Find("top3").gameObject;
 
-        if (tagg == "bottom") //í•˜ì˜ì¼ê²½ìš° ì„¸íŠ¸ ë¹„í™œì„±í™”
+        if (tagg == "bottom") //ÇÏÀÇÀÏ°æ¿ì ¼¼Æ® ºñÈ°¼ºÈ­
             set.gameObject.SetActive(false);
 
-        var t = GameObject.FindGameObjectsWithTag(tagg);
-        for (int i = 0; i < t.Length; i++)
+        var category = GameObject.FindGameObjectsWithTag(tagg);
+        for (int i = 0; i < category.Length; i++)
         {
-            t[i].gameObject.SetActive(false);
+            category[i].gameObject.SetActive(false);
         }
 
-        img.SetActive(true); //ì‚¬ìš©ìê°€ í´ë¦­í•œ ì˜· ê·¸ë¦¼ í™œì„±í™”
+        img.SetActive(true); //»ç¿ëÀÚ°¡ Å¬¸¯ÇÑ ¿Ê ±×¸² È°¼ºÈ­
 
         if (set.gameObject.activeSelf == true)
-        { //ìƒì˜ê°€ ì„¸íŠ¸ì¸ê²½ìš° í•˜ì˜ ë¹„í™œì„±í™”
-            t = GameObject.FindGameObjectsWithTag("bottom");
-            for (int i = 0; i < t.Length; i++)
+        { //»óÀÇ°¡ ¼¼Æ®ÀÎ°æ¿ì ÇÏÀÇ ºñÈ°¼ºÈ­
+            category = GameObject.FindGameObjectsWithTag("bottom");
+            for (int i = 0; i < category.Length; i++)
             {
-                t[i].gameObject.SetActive(false);
+                category[i].gameObject.SetActive(false);
             }
         }
     }
 
-    public void on() //ì˜¤ë¸Œì íŠ¸ ìœ„ì— ë§ˆìš°ìŠ¤ë¥¼ ì˜¬ë¦¬ë©´ (choose_stage Scene)
+    public void on() //¿ÀºêÁ§Æ® À§¿¡ ¸¶¿ì½º¸¦ ¿Ã¸®¸é (choose_stage Scene)
     {
-        transform.GetChild(0).gameObject.SetActive(true); //child 0ì„ í™œì„±í™”
+        transform.GetChild(0).gameObject.SetActive(true); //child 0À» È°¼ºÈ­
     }
 
-    public void off() //ì˜¤ë¸Œì íŠ¸ì—ì„œ ë§ˆìš°ìŠ¤ë¥¼ ë‚´ë¦¬ë©´ (choose_stage Scene)
+    public void off() //¿ÀºêÁ§Æ®¿¡¼­ ¸¶¿ì½º¸¦ ³»¸®¸é (choose_stage Scene)
     {
-        transform.GetChild(0).gameObject.SetActive(false); //child 0ì„ ë¹„í™œì„±í™”
+        transform.GetChild(0).gameObject.SetActive(false); //child 0À» ºñÈ°¼ºÈ­
     }
     public void resetting()
-    {//ë¦¬ì…‹ë²„íŠ¼ì„ ëˆ„ë¥´ë©´
+    {//¸®¼Â¹öÆ°À» ´©¸£¸é
+        _score = 0;
         string[] tagg = { "hair", "top", "bottom", "acc", "shoes" };
         foreach (string e in tagg) {
-            var t = GameObject.FindGameObjectsWithTag(e);
-            for (int i = 0; i < t.Length; i++)
+            var category = GameObject.FindGameObjectsWithTag(e);
+            for (int i = 0; i < category.Length; i++)
             {
-                if (t[i].gameObject.activeSelf == true)
-                    t[i].gameObject.SetActive(false);
+                if (category[i].gameObject.activeSelf == true)
+                    category[i].gameObject.SetActive(false);
             }
         }
     }
