@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 190315243}
   m_Layer: 5
   m_Name: mr.jo
-  m_TagString: Untagged
+  m_TagString: stage1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -362,7 +362,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1348068140}
+      - m_Target: {fileID: 190315243}
         m_TargetAssemblyTypeName: Button, Assembly-CSharp
         m_MethodName: OnClickStory
         m_Mode: 1
@@ -496,6 +496,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   img: {fileID: 0}
+  story: {fileID: 190315235}
+  st1_score: 0
+  st2_score: 0
+  st3_score: 0
+  st4_score: 0
+  st5_score: 0
 --- !u!1 &952531951
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,7 +519,7 @@ GameObject:
   - component: {fileID: 952531960}
   m_Layer: 5
   m_Name: book
-  m_TagString: Untagged
+  m_TagString: stage5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -583,7 +589,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1348068140}
+      - m_Target: {fileID: 952531960}
         m_TargetAssemblyTypeName: Button, Assembly-CSharp
         m_MethodName: OnClickStory
         m_Mode: 1
@@ -717,6 +723,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   img: {fileID: 0}
+  story: {fileID: 952531951}
+  st1_score: 0
+  st2_score: 0
+  st3_score: 0
+  st4_score: 0
+  st5_score: 0
 --- !u!1 &1348068135
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,7 +744,7 @@ GameObject:
   - component: {fileID: 1348068140}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: stage1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -836,6 +848,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   img: {fileID: 0}
+  story: {fileID: 190315235}
+  st1_score: 0
+  st2_score: 0
+  st3_score: 0
+  st4_score: 0
+  st5_score: 0
 --- !u!1 &1690260786
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,7 +870,7 @@ GameObject:
   - component: {fileID: 1690260791}
   m_Layer: 5
   m_Name: computer
-  m_TagString: Untagged
+  m_TagString: stage2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -922,7 +940,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1348068140}
+      - m_Target: {fileID: 1690260792}
         m_TargetAssemblyTypeName: Button, Assembly-CSharp
         m_MethodName: OnClickStory
         m_Mode: 1
@@ -1030,6 +1048,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   img: {fileID: 0}
+  story: {fileID: 1690260786}
+  st1_score: 0
+  st2_score: 0
+  st3_score: 0
+  st4_score: 0
+  st5_score: 0
 --- !u!1 &1734464161
 GameObject:
   m_ObjectHideFlags: 0
@@ -1047,7 +1071,7 @@ GameObject:
   - component: {fileID: 1734464170}
   m_Layer: 5
   m_Name: calendar
-  m_TagString: Untagged
+  m_TagString: stage3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1117,7 +1141,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1348068140}
+      - m_Target: {fileID: 1734464170}
         m_TargetAssemblyTypeName: Button, Assembly-CSharp
         m_MethodName: OnClickStory
         m_Mode: 1
@@ -1251,6 +1275,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   img: {fileID: 0}
+  story: {fileID: 1734464161}
+  st1_score: 0
+  st2_score: 0
+  st3_score: 0
+  st4_score: 0
+  st5_score: 0
 --- !u!1 &1734865774
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,7 +1534,7 @@ GameObject:
   - component: {fileID: 1959781755}
   m_Layer: 5
   m_Name: pot
-  m_TagString: Untagged
+  m_TagString: stage4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1574,7 +1604,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1348068140}
+      - m_Target: {fileID: 1959781755}
         m_TargetAssemblyTypeName: Button, Assembly-CSharp
         m_MethodName: OnClickStory
         m_Mode: 1
@@ -1708,6 +1738,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   img: {fileID: 0}
+  story: {fileID: 1959781746}
+  st1_score: 0
+  st2_score: 0
+  st3_score: 0
+  st4_score: 0
+  st5_score: 0
 --- !u!1 &1986577854
 GameObject:
   m_ObjectHideFlags: 0
