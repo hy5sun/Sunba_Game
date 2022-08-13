@@ -33,7 +33,6 @@ public class Button : MonoBehaviour //특정 버튼을 누르면 주어진 코드가 동작하는 
     {
         Debug.Log("옷 입히기 씬으로 이동중!");
         _stage = story.tag;
-        Debug.Log(_stage);
 
         SceneManager.LoadScene("main_clothes"); //옷 입히는 게임 창으로 이동
     }
@@ -70,6 +69,9 @@ public class Button : MonoBehaviour //특정 버튼을 누르면 주어진 코드가 동작하는 
         if (tagg == "bottom") //하의일경우 세트 비활성화
             set.gameObject.SetActive(false);
 
+        if (tagg == "hair") //머리 적용한 경우 세트 비활성화
+            set.gameObject.SetActive(false);
+
         var category = GameObject.FindGameObjectsWithTag(tagg);
         for (int i = 0; i < category.Length; i++)
         {
@@ -79,8 +81,14 @@ public class Button : MonoBehaviour //특정 버튼을 누르면 주어진 코드가 동작하는 
         img.SetActive(true); //사용자가 클릭한 옷 그림 활성화
 
         if (set.gameObject.activeSelf == true)
-        { //상의가 세트인경우 하의 비활성화
+        { //상의가 세트인경우 하의, 머리 비활성화
             category = GameObject.FindGameObjectsWithTag("bottom");
+            for (int i = 0; i < category.Length; i++)
+            {
+                category[i].gameObject.SetActive(false);
+            }
+
+            category = GameObject.FindGameObjectsWithTag("hair");
             for (int i = 0; i < category.Length; i++)
             {
                 category[i].gameObject.SetActive(false);
@@ -99,7 +107,7 @@ public class Button : MonoBehaviour //특정 버튼을 누르면 주어진 코드가 동작하는 
     }
     public void resetting()
     {//리셋버튼을 누르면
-        _score = 0;
+        
         string[] tagg = { "hair", "top", "bottom", "acc", "shoes" };
         foreach (string e in tagg) {
             var category = GameObject.FindGameObjectsWithTag(e);
