@@ -9,28 +9,27 @@ public class score : MonoBehaviour
     public int st3_score; //stage3 옷 점수
     public int st4_score; //stage4 옷 점수
     public int st5_score; //stage5 옷 점수
-    public static int _score = 0; //총 점수
 
-    public void plusScore(string _stage) //옷 점수 계산 함수
+    public int ReturnScore(string stage) //스테이지 별 옷 점수 반환 함수
     {
-        switch (_stage)
+        switch (stage)
         {
             case "stage1":
-                _score += st1_score;
+                return st1_score;
                 break;
             case "stage2":
-                _score += st2_score;
+                return st2_score;
                 break;
             case "stage3":
-                _score += st3_score;
+                return st3_score;
                 break;
             case "stage4":
-                _score += st4_score;
+                return st4_score;
                 break;
             default:
-                _score += st5_score;
+                return st5_score;
                 break;
         }
-        Debug.Log(_score);
+
     }
 }

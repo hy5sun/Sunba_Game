@@ -8,8 +8,8 @@ public class Button : MonoBehaviour //특정 버튼을 누르면 주어진 코드가 동작하는 
 {
     public GameObject img; //나타나게 할 이미지 지정 (옷 선택할 때)
     public GameObject story;
-    public static int _score; //총 점수
     public static string _stage; //현재 스테이지 (옷 계산할 때 사용)
+    public static int scoreSum = 0;
 
     public void OnClickStart() //게임시작 버튼을 누르면
     {
@@ -52,7 +52,9 @@ public class Button : MonoBehaviour //특정 버튼을 누르면 주어진 코드가 동작하는 
             {
                 if (category[i].gameObject.activeSelf == true)
                 {
-                    category[i].GetComponent<score>().plusScore(_stage); //score 스크립트 속 plusScore 함수 실행
+                    Debug.Log("스테이지 " + _stage + "입니다.");
+                    scoreSum += category[i].GetComponent<score>().ReturnScore(_stage);
+                    Debug.Log("총점수는 " + scoreSum);
                 }
             }
         }
