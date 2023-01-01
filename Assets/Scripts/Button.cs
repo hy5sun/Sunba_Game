@@ -11,6 +11,12 @@ public class Button : MonoBehaviour //특정 버튼을 누르면 주어진 코드가 동작하는 
     public static string _stage; //현재 스테이지 (옷 계산할 때 사용)
     public static int scoreSum = 0;
 
+    public void OnClickQuit()
+    {
+        Debug.Log("게임을 종료합니다.");
+        Application.Quit(); //게임 종료
+    }
+
     public void OnClickStart() //게임시작 버튼을 누르면
     {
         Debug.Log("게임을 시작합니다!");
@@ -39,15 +45,15 @@ public class Button : MonoBehaviour //특정 버튼을 누르면 주어진 코드가 동작하는 
 
     public void ending() //사용자가 완료 버튼을 누르면
     {
-        
+        scoreSum = 0;
         Debug.Log("완성!!!");
 
         //완료 버튼을 누르면 활성화 되어있는 오브젝트들의 점수 합산하기
-        string[] tagg = { "hair", "bottom", "top", "acc", "shoes" };
+        string[] tagg = {"hair", "bottom", "top", "acc", "shoes" };
+
         foreach (string k in tagg)
         {
             GameObject[] category = GameObject.FindGameObjectsWithTag(k);
-            
             for (int i = 0; i < category.Length; i++)
             {
                 if (category[i].gameObject.activeSelf == true)
@@ -58,6 +64,19 @@ public class Button : MonoBehaviour //특정 버튼을 누르면 주어진 코드가 동작하는 
                 }
             }
         }
+        if (GameObject.Find("top1") && GameObject.Find("bottom1")) scoreSum += 10; //세트점수반영
+        if (GameObject.Find("top2") && GameObject.Find("bottom3")) scoreSum += 10;
+        if (GameObject.Find("top3")) scoreSum += 10;
+        if (GameObject.Find("top4") && GameObject.Find("bottom4")) scoreSum += 10;
+        if (GameObject.Find("top5") && GameObject.Find("bottom6")) scoreSum += 10;
+        if (GameObject.Find("top6") && GameObject.Find("bottom5")) scoreSum += 10;
+        if (GameObject.Find("top7") && GameObject.Find("bottom7")) scoreSum += 10;
+        if (GameObject.Find("top8")) scoreSum += 10;
+
+
+
+        GameObject[] beard = GameObject.FindGameObjectsWithTag("acc-beard"); //수염없으면0점
+        if(beard.Length==0) scoreSum = 0;
         
         SceneManager.LoadScene("resultscene"); //결과 발표 창으로 이동
     }
@@ -110,14 +129,10 @@ public class Button : MonoBehaviour //특정 버튼을 누르면 주어진 코드가 동작하는 
     public void resetting()
     {//리셋버튼을 누르면
         
-        string[] tagg = { "hair", "top", "bottom", "acc", "shoes" };
+        string[] tagg = { "acc-beard","hair", "top", "bottom", "acc", "shoes" };
         foreach (string e in tagg) {
             var category = GameObject.FindGameObjectsWithTag(e);
-            for (int i = 0; i < category.Length; i++)
-            {
-                if (category[i].gameObject.activeSelf == true)
-                    category[i].gameObject.SetActive(false);
-            }
+                if (category.Length != 0) category[0].gameObject.SetActive(false);
         }
     }
 }
