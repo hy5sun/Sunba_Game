@@ -10,6 +10,9 @@ public class Button : MonoBehaviour //특정 버튼을 누르면 주어진 코드가 동작하는 
     public GameObject story;
     public static string _stage; //현재 스테이지 (옷 계산할 때 사용)
     public static int scoreSum = 0;
+    public GameObject hair;
+    public GameObject shoes;
+    public GameObject[] closett;
 
     public void OnClickStart() //게임시작 버튼을 누르면
     {
@@ -36,7 +39,43 @@ public class Button : MonoBehaviour //특정 버튼을 누르면 주어진 코드가 동작하는 
 
         SceneManager.LoadScene("main_clothes"); //옷 입히는 게임 창으로 이동
     }
+    public void right() //옷장버튼
+    {
+        GameObject thisis = shoes;
+        GameObject next = hair;
 
+        for (int i = 0; i < 4; i++)
+        {
+            if (closett[i].gameObject.activeSelf == true)
+            {
+                thisis = closett[i];
+                next = closett[i + 1];
+            }
+        }
+
+        thisis.gameObject.SetActive(false);
+        next.gameObject.SetActive(true);
+    }
+
+
+    public void left() //옷장버튼
+    {
+
+        GameObject thisis = hair;
+        GameObject next = shoes;
+
+        for (int i = 4; i > 0; i--)
+        {
+            if (closett[i].gameObject.activeSelf == true)
+            {
+                thisis = closett[i];
+                next = closett[i - 1];
+            }
+        }
+
+        thisis.gameObject.SetActive(false);
+        next.gameObject.SetActive(true);
+    }
     public void ending() //사용자가 완료 버튼을 누르면
     {
         scoreSum = 0;
