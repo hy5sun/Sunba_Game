@@ -1,83 +1,111 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+//í•´ì•¼í•˜ëŠ” ê²ƒ : ì ìˆ˜ì— ë”°ë¥¸ ì‚¬ìš´ë“œì¬ìƒ/íŒŒíŠ¸ë„ˆí™œì„±í™”
+//GameObject.Find("parthers").transform.Find("Partner1").gameObject.SetActive(true);
 public class results : MonoBehaviour
 {
-    public TextMeshProUGUI TextScore; //Á¡¼ö ÅØ½ºÆ®
-    public TextMeshProUGUI TextTalking; //ÆÄÆ®³Ê ´ë»ç ÅØ½ºÆ®
+    public TextMeshProUGUI TextScore; //ì ìˆ˜ í…ìŠ¤íŠ¸
+    public TextMeshProUGUI TextTalking; //íŒŒíŠ¸ë„ˆ ëŒ€ì‚¬ í…ìŠ¤íŠ¸
+    public AudioClip[] audioclip;
+    AudioSource audiosource;
 
     void Start()
     {
-        TextScore.text = "´ç½ÅÀÇ Á¡¼ö´Â~~" + Button.scoreSum.ToString() + "Á¡!!!"; //Button ½ºÅ©¸³Æ® ³»ÀÇ scoreSum ºÒ·¯¿Í¼­ strÈ­
+        TextScore.text = Button.scoreSum.ToString(); //Button ìŠ¤í¬ë¦½íŠ¸ ë‚´ì˜ scoreSum ë¶ˆëŸ¬ì™€ì„œ strí™”
+        audiosource = GetComponent<AudioSource>();
+        if (Button.scoreSum == 100)
+        {
+            audiosource.clip = audioclip[0];
+            StartCoroutine(delaytime());
+        }
+        else if (Button.scoreSum >= 80)
+        {
+            audiosource.clip = audioclip[1];
+            StartCoroutine(delaytime());
+        }
+        else if (Button.scoreSum >= 60)
+        {
+            audiosource.clip = audioclip[2];
+            StartCoroutine(delaytime());
+        }
+        else if (Button.scoreSum >= 30)
+        {
+            audiosource.clip = audioclip[3];
+            StartCoroutine(delaytime());
+        }
+        else if (Button.scoreSum >= 0)
+        {
+            audiosource.clip = audioclip[4];
+            StartCoroutine(delaytime());
+        }
+        //-----------------------------------------
+        if (Button._stage == "stage1") //íŠ¸ìœ„ì¹˜íŒŒí‹°
+        {
+            if (Button.scoreSum == 100)
+                TextTalking.text = "ì„ ë°”ë‹˜ ì˜· ì§„ì§œ ì˜ì…ìœ¼ì„¸ìš”? íŒ¨ì…˜ìª½ìœ¼ë¡œ ë‚˜ê°€ë³´ì„¸ìš” ã…ã…";
+            else if (Button.scoreSum >= 80)
+                TextTalking.text = "ì„ ë°”ë‹˜ì´ ëˆˆì— ì—„ì²­ ë„ëŠ” ê±° ì•„ì‹œì£  ì§±ì´ì‹œë„¤ ì§„ì§œ";
+            else if (Button.scoreSum >= 60)
+                TextTalking.text = "ì•„~ ì„ ë°˜ë‹˜ì´ìš”? ì•ˆë…•í•˜ì„¸ìš”~ í¸í•˜ê²Œ ì…ê³  ì˜¤ì…¨ë„¤..!";
+            else if (Button.scoreSum >= 30)
+                TextTalking.text = "ì„ ë°”ë‹˜ ì´ëŸ¬ê³  ì˜¤ì…¨ì–´ìš”? ì»¨ì…‰ì´ì‹ ê°€ã…ã…....";
+            else if (Button.scoreSum >= 0)
+                TextTalking.text = "ì € ë¶„ì´ ì„ ë°”ë‹˜ì´ì…”? ê·¸ë ‡êµ¬ë‚˜.......... ê¸€ì¿¤,,";
+        }
+        else if (Button._stage == "stage2") //ëª¨ë‹ˆì¹´
+        {
+            TextTalking.text = "ì„ ë°”, ë‚˜ë‘ ì˜ì›íˆ í•¨ê»˜ í•˜ì";
+        }
+        else if (Button._stage == "stage3") //íŒ¬ë¯¸íŒ…
+        {
+            if (Button.scoreSum == 100)
+                TextTalking.text = "ì„ ë°”ë‹˜ ë„ˆë¬´ ë©‹ì§€ì„¸ìš” ><!!!";
+            else if (Button.scoreSum >= 80)
+                TextTalking.text = "ì™€ ì„ ë°”ë‹˜ ì˜· ë¨¸ì—ìš”!! ë„ˆë¬´ ë©‹ì§€ì–ì•„ìš”";
+            else if (Button.scoreSum >= 60)
+                TextTalking.text = "ë‚´ê°€ ì•„ëŠ” ì„ ë°˜ë‹˜ì´ ì•„ë‹ˆì•¼,,";
+            else if (Button.scoreSum >= 30)
+                TextTalking.text = "ì§„ì§œ ìŠ¤íŠ¸ë¦¬ë¨¸ëŠ” ë‹¤ë¥´ë‹¤. íŒ¬ë¯¸íŒ…ì—ì„œê¹Œì§€ ì»¨í…ì¸  ë¶„ëŸ‰ì„ ë½‘ìœ¼ì‹œë„¤. ê°ë™ì´ì•¼!!!";
+            else if (Button.scoreSum >= 0)
+                TextTalking.text = "ã„¹ã…‡ ìˆ­í•˜ì‹œë‹¤";
+        }
+        else if (Button._stage == "stage4") //ìŠ¤í¬í‹°ê±¸
+        {
+            if (Button.scoreSum == 100)
+                TextTalking.text = "í¥ ì´ ì •ë„ëŠ” ë¼ì•¼ ë‚´ íŒŒíŠ¸ë„ˆì§€";
+            else if (Button.scoreSum >= 80)
+                TextTalking.text = "ë´ì¤„ë§Œ í•˜ë„¤ ã…‹";
+            else if (Button.scoreSum >= 60)
+                TextTalking.text = "ë‹¤ì‹œ ìƒê°í•´ë³´ì§€ê·¸ë˜?";
+            else if (Button.scoreSum >= 30)
+                TextTalking.text = "ë„ˆ ì´ëŸ° ì˜·ìœ¼ë¡œ ë‚˜ë‘ íŒŒí‹°ì— ê°ˆ ìƒê°ì´ì•¼?";
+            else if (Button.scoreSum >= 0)
+                TextTalking.text = "í™”ë¶„ìœ¼ë¡œ íŒ¨ì…˜ê°ê°ë„ ë¦¬ì…‹ëë‹ˆ?";
+        }
+        else //í›„ë°°ë“¤ê³¼ì˜ ì¡°ë³„ê³¼ì œ
+        {
+            if (Button.scoreSum == 100)
+                TextTalking.text = "ì™€ SUNBA,, ê·¸ë ‡ê²Œ ìƒê°ë³´ë‹¤ ëŒ„ë””ë³´ì´ì¸ ê±¸?";
+            else if (Button.scoreSum >= 80)
+                TextTalking.text = "ì‚¬ìŠ¤ì¹´ 10í•™ë²ˆ ì„¼ë¹ ì´! ì˜· ì…ëŠ” ê²ƒë¶€í„°ê°€ ë‹¤ë¥´ë‹¤êµ¬!!!";
+            else if (Button.scoreSum >= 60)
+                TextTalking.text = "í˜¼ì 10ë…„ëŒ€ì— ë©ˆì¶°ê³„ì‹ ê±° ì•„ë‹ˆì£ ?";
+            else if (Button.scoreSum >= 30)
+                TextTalking.text = "ì„ ë°°ë‹˜ ë‹¤ìŒë¶€í„° ì•ˆ ë‚˜ì˜¤ì…”ë„ ë¼ìš”..! ê·¸ëƒ¥ ë°œí‘œë‘ ìë£Œì¡°ì‚¬ë§Œ ë§¡ì•„ì£¼ì„¸ìš”";
+            else if (Button.scoreSum >= 0)
+                TextTalking.text = "ì œ ì´ë¦„ ê·¸ëƒ¥ ë¹¼ì£¼ì„¸ìš”";
+        }
+        //-------------------------------
+        GameObject.Find("backgrounds").transform.Find(Button._stage.ToString()).gameObject.SetActive(true);
+        GameObject.Find("partners").transform.Find(Button._stage.ToString()).gameObject.SetActive(true);
+    }
 
-        if (Button._stage == "stage1") //Æ®À§Ä¡ÆÄÆ¼
-        {
-            if (Button.scoreSum == 100)
-                TextTalking.text = "¼±¹Ù´Ô ¿Ê ÍÄÉ ÀßÀÔÀ¸¼¼¿ä? ÆĞ¼ÇÂÊÀ¸·Î ³ª°¡º¸¼¼¿ä";
-            else if (Button.scoreSum >= 80)
-                TextTalking.text = "¼±¹Ù´ÔÀÌ ´«¿¡ ¾öÃ» ¶ç´Â °Å ¾Æ½ÃÁÒ Â¯ÀÌ½Ã³× ÁøÂ¥";
-            else if (Button.scoreSum >= 60)
-                TextTalking.text = "¾Æ~ ¼±¹İ´ÔÀÌ¿ä? ¾È³çÇÏ¼¼¿ä~ ÆíÇÏ°Ô ÀÔ°í ¿À¼Ì³×..!";
-            else if (Button.scoreSum >= 30)
-                TextTalking.text = "¼±¹Ù´Ô ÀÌ·¯°í ¿À¼Ì¾î¿ä? ÄÁ¼ÁÀÌ½Å°¡¤¾¤¾....";
-            else if (Button.scoreSum >= 0)
-                TextTalking.text = "Àú ºĞÀÌ ¼±¹Ù´ÔÀÌ¼Å? ±×·¸±¸³ª.......... ±ÛÄï,,";
-        }
-        else if (Button._stage == "stage2") //¸ğ´ÏÄ«
-        {
-            if (Button.scoreSum == 100)
-                TextTalking.text = "¼±¹Ù, ³ª¶û ¿µ¿øÈ÷ ÇÔ²² ÇÏÀÚ";
-            else if (Button.scoreSum >= 80)
-                TextTalking.text = "¼±¹Ù, ³ª¶û ¿µ¿øÈ÷ ÇÔ²² ÇÏÀÚ";
-            else if (Button.scoreSum >= 60)
-                TextTalking.text = "¼±¹Ù, ³ª¶û ¿µ¿øÈ÷ ÇÔ²² ÇÏÀÚ";
-            else if (Button.scoreSum >= 30)
-                TextTalking.text = "¼±¹Ù, ³ª¶û ¿µ¿øÈ÷ ÇÔ²² ÇÏÀÚ";
-            else if (Button.scoreSum >= 0)
-                TextTalking.text = "¼±¹Ù, ³ª¶û ¿µ¿øÈ÷ ÇÔ²² ÇÏÀÚ";
-        }
-        else if (Button._stage == "stage3") //ÆÒ¹ÌÆÃ
-        {
-            if (Button.scoreSum == 100)
-                TextTalking.text = "¼±¹Ù´Ô ³Ê¹« ¸ÚÁö¼¼¿ä ><!!!";
-            else if (Button.scoreSum >= 80)
-                TextTalking.text = "¿Í ¼±¹Ù´Ô ¿Ê ¸Ó¿¡¿ä!! ³Ê¹« ¸ÚÁöÀİ¾Æ¿ä";
-            else if (Button.scoreSum >= 60)
-                TextTalking.text = "³»°¡ ¾Æ´Â ¼±¹İ´ÔÀÌ ¾Æ´Ï¾ß,,";
-            else if (Button.scoreSum >= 30)
-                TextTalking.text = "ÁøÂ¥ ½ºÆ®¸®¸Ó´Â ´Ù¸£´Ù. ÆÒ¹ÌÆÃ¿¡¼­±îÁö ÄÁÅÙÃ÷ ºĞ·®À» »ÌÀ¸½Ã³×. °¨µ¿ÀÌ¾ß!!!";
-            else if (Button.scoreSum >= 0)
-                TextTalking.text = "¤©¤· ¼şÇÏ½Ã´Ù";
-        }
-        else if (Button._stage == "stage4") //½ºÆ÷Æ¼°É
-        {
-            if (Button.scoreSum == 100)
-                TextTalking.text = "Èï ÀÌ Á¤µµ´Â µÅ¾ß ³» ÆÄÆ®³ÊÁö";
-            else if (Button.scoreSum >= 80)
-                TextTalking.text = "ºÁÁÙ¸¸ ÇÏ³× ¤»";
-            else if (Button.scoreSum >= 60)
-                TextTalking.text = "´Ù½Ã »ı°¢ÇØº¸Áö±×·¡?";
-            else if (Button.scoreSum >= 30)
-                TextTalking.text = "³Ê ÀÌ·± ¿ÊÀ¸·Î ³ª¶û ÆÄÆ¼¿¡ °¥ »ı°¢ÀÌ¾ß?";
-            else if (Button.scoreSum >= 0)
-                TextTalking.text = "È­ºĞÀ¸·Î ÆĞ¼Ç°¨°¢µµ ¸®¼ÂµÆ´Ï?";
-        }
-        else //ÈÄ¹èµé°úÀÇ Á¶º°°úÁ¦
-        {
-            if (Button.scoreSum == 100)
-                TextTalking.text = "¿Í SUNBA,, ±×·¸°Ô »ı°¢º¸´Ù ´íµğº¸ÀÌÀÎ °É?";
-            else if (Button.scoreSum >= 80)
-                TextTalking.text = "»ç½ºÄ« 10ÇĞ¹ø ¼¾ºüÀÌ! ¿Ê ÀÔ´Â °ÍºÎÅÍ°¡ ´Ù¸£´Ù±¸!!!";
-            else if (Button.scoreSum >= 60)
-                TextTalking.text = "È¥ÀÚ 10³â´ë¿¡ ¸ØÃç°è½Å°Å ¾Æ´ÏÁÒ?";
-            else if (Button.scoreSum >= 30)
-                TextTalking.text = "¼±¹è´Ô ´ÙÀ½ºÎÅÍ ¾È ³ª¿À¼Åµµ µÅ¿ä..! ±×³É ¹ßÇ¥¶û ÀÚ·áÁ¶»ç¸¸ ¸Ã¾ÆÁÖ¼¼¿ä";
-            else if (Button.scoreSum >= 0)
-                TextTalking.text = "Á¦ ÀÌ¸§ ±×³É »©ÁÖ¼¼¿ä";
-        }
-
+IEnumerator delaytime()
+    {
+        yield return new WaitForSeconds(4.0f);
+        audiosource.Play();
     }
 }

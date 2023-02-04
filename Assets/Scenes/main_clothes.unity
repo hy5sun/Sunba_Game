@@ -320,6 +320,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 1662639669}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!82 &64895419
 AudioSource:
   m_ObjectHideFlags: 0
@@ -936,6 +939,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 851057448}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!82 &250982766
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1181,6 +1187,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 714584441}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!114 &262199298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1438,6 +1447,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 204558123}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!114 &288695543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1651,7 +1663,6 @@ GameObject:
   - component: {fileID: 306821363}
   - component: {fileID: 306821366}
   - component: {fileID: 306821365}
-  - component: {fileID: 306821364}
   m_Layer: 5
   m_Name: StageText (TMP)
   m_TagString: Untagged
@@ -1676,22 +1687,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -259.8824, y: 441}
-  m_SizeDelta: {x: 477.9005, y: 142.9163}
+  m_AnchoredPosition: {x: -24, y: 448}
+  m_SizeDelta: {x: 1050.4148, y: 135.1093}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &306821364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 306821362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4801176e0e287b049a5696253cb70ca4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TextStage: {fileID: 306821365}
 --- !u!114 &306821365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1746,8 +1744,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2141,8 +2139,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 597597498}
-        m_TargetAssemblyTypeName: closet, Assembly-CSharp
+      - m_Target: {fileID: 597597499}
+        m_TargetAssemblyTypeName: Button, Assembly-CSharp
         m_MethodName: left
         m_Mode: 1
         m_Arguments:
@@ -2405,6 +2403,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 945853171}
+  - {fileID: 1047835774}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2668,6 +2667,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 469652188}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!82 &470591991
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2925,6 +2927,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 2143741445}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!82 &497453404
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3183,6 +3188,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 0}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!82 &530296949
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3440,6 +3448,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 1435542418}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!82 &571141173
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3591,6 +3602,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 2103813342}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!114 &576979477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3911,14 +3925,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 849bfdbbcd63ad14f944906d33ddffde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hair: {fileID: 327593111}
-  shoes: {fileID: 1513912753}
-  closett:
-  - {fileID: 327593111}
-  - {fileID: 1179967030}
-  - {fileID: 1653301550}
-  - {fileID: 1659720486}
-  - {fileID: 1513912753}
 --- !u!114 &597597499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3931,8 +3937,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01fdaf5775de8d04e8a6ff062fa68f7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  img: {fileID: 0}
+  img: {fileID: 1047835773}
   story: {fileID: 0}
+  hair: {fileID: 327593111}
+  shoes: {fileID: 1513912753}
+  closett:
+  - {fileID: 327593111}
+  - {fileID: 1179967030}
+  - {fileID: 1653301550}
+  - {fileID: 1659720486}
+  - {fileID: 1513912753}
 --- !u!1 &661132994
 GameObject:
   m_ObjectHideFlags: 0
@@ -4205,6 +4219,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 726188484}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!114 &700326448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4973,6 +4990,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 981243928}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!114 &771222106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5618,6 +5638,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 1912017395}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!82 &868890618
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5875,6 +5898,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 827846231}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!82 &902392365
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6026,6 +6052,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 0}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!114 &935496048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6459,6 +6488,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012554952}
   m_CullTransparentMesh: 1
+--- !u!1 &1047835773
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1047835774}
+  - component: {fileID: 1047835775}
+  - component: {fileID: 1047835776}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1047835774
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047835773}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 421296742}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1047835775
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047835773}
+  m_CullTransparentMesh: 1
+--- !u!114 &1047835776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047835773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 6274ed98067c92945b0a20c7da287e9b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1071759320
 GameObject:
   m_ObjectHideFlags: 0
@@ -6514,6 +6619,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 1589590884}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!114 &1071759323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6971,6 +7079,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 1645671558}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!82 &1114588674
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7228,6 +7339,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 125648714}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!82 &1127025683
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8398,6 +8512,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 785278154}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!82 &1392272951
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8655,6 +8772,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 1298696514}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!82 &1410347030
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8900,6 +9020,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 196158739}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!114 &1459929060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9610,6 +9733,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 1530645025}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!82 &1538300612
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9761,6 +9887,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 1297098902}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!114 &1550990598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10259,6 +10388,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 255241998}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!82 &1580940936
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10632,6 +10764,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 1349546152}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!114 &1635848066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11397,6 +11532,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 726915721}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!82 &1705356868
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11654,6 +11792,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 1523700246}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!82 &1724106505
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11805,6 +11946,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 729107235}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!114 &1772539674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12310,6 +12454,8 @@ GameObject:
   - component: {fileID: 1863630978}
   - component: {fileID: 1863630977}
   - component: {fileID: 1863630976}
+  - component: {fileID: 1863630980}
+  - component: {fileID: 1863630979}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -12367,6 +12513,117 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1863630979
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863630975}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c182b8c4655c92944b77b41cda2f526e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1863630980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863630975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4801176e0e287b049a5696253cb70ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  image: {fileID: 1047835776}
+  TextStage: {fileID: 306821365}
 --- !u!1 &1866929818
 GameObject:
   m_ObjectHideFlags: 0
@@ -12528,6 +12785,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 1384346134}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!82 &1866929824
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12938,8 +13198,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 597597498}
-        m_TargetAssemblyTypeName: closet, Assembly-CSharp
+      - m_Target: {fileID: 597597499}
+        m_TargetAssemblyTypeName: Button, Assembly-CSharp
         m_MethodName: right
         m_Mode: 1
         m_Arguments:
@@ -13381,6 +13641,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 1091064911}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!114 &2069616936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13638,6 +13901,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 1780466660}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!114 &2081931469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13895,6 +14161,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 1315286364}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!114 &2093532218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14352,6 +14621,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 2138850931}
   story: {fileID: 0}
+  hair: {fileID: 0}
+  shoes: {fileID: 0}
+  closett: []
 --- !u!82 &2129633930
 AudioSource:
   m_ObjectHideFlags: 0

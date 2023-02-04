@@ -10,6 +10,9 @@ public class score : MonoBehaviour
     public int st4_score; //stage4 옷 점수
     public int st5_score; //stage5 옷 점수
 
+
+
+
     public int ReturnScore(string stage) //스테이지 별 옷 점수 반환 함수
     {
         switch (stage)
