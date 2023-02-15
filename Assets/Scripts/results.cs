@@ -45,58 +45,59 @@ public class results : MonoBehaviour
         if (Button._stage == "stage1") //트위치파티
         {
             if (Button.scoreSum == 100)
-                TextTalking.text = "선바님 옷 진짜 잘입으세요? 패션쪽으로 나가보세요 ㅎㅎ";
+                TextTalking.text = "<size=62.6>트하! 유튜브80만 구독자 슈트리머 선바님과 파.트.너로 트위치 파티에 왔습니다 꺆><!";
             else if (Button.scoreSum >= 80)
-                TextTalking.text = "선바님이 눈에 엄청 띄는 거 아시죠 짱이시네 진짜";
+                TextTalking.text = "<size=71.8>트하! 여러분~ 오늘은 선바님과 트위치 파티에 왔습니다!";
             else if (Button.scoreSum >= 60)
-                TextTalking.text = "아~ 선반님이요? 안녕하세요~ 편하게 입고 오셨네..!";
+                TextTalking.text = "<size=71.8>아~ 그,,선반? 편하게 입고 오셨네~ 방송이 장난이에요?";
             else if (Button.scoreSum >= 30)
-                TextTalking.text = "선바님 이러고 오셨어요? 컨셉이신가ㅎㅎ....";
+                TextTalking.text = "<size=64.8>트하! 여러분! 오늘은 옆집 개를 데리고 트위치 파티에 와봤습니다!";
             else if (Button.scoreSum >= 0)
-                TextTalking.text = "저 분이 선바님이셔? 그렇구나.......... 글쿤,,";
+                TextTalking.text = "<size=67.4>트하! 여러분~ 오늘은 저 '혼자서' 트위치 파티에 와봤습니다!";
         }
         else if (Button._stage == "stage2") //모니카
         {
-            TextTalking.text = "선바, 나랑 영원히 함께 하자";
+            TextTalking.text = "<color=red><size=117.9>선바, 나랑 영원히 함께 하자";
         }
         else if (Button._stage == "stage3") //팬미팅
         {
             if (Button.scoreSum == 100)
-                TextTalking.text = "선바님 너무 멋지세요 ><!!!";
+                TextTalking.text = @"<size=84.2>선바님 수염이
+너무 멋지세요 ><!!!";
             else if (Button.scoreSum >= 80)
-                TextTalking.text = "와 선바님 옷 머에요!! 너무 멋지잖아요";
+                TextTalking.text = "<size=107.7>심뽀찜뽀";
             else if (Button.scoreSum >= 60)
-                TextTalking.text = "내가 아는 선반님이 아니야,,";
+                TextTalking.text = "<size=77.7>선바님 제발 거기서 그렇게 하시면 안돼요 엉엉엉엉..";
             else if (Button.scoreSum >= 30)
-                TextTalking.text = "진짜 스트리머는 다르다. 팬미팅에서까지 컨텐츠 분량을 뽑으시네. 감동이야!!!";
+                TextTalking.text = "<size=77.7>선반님 아무리 선술잘이어도 그렇지 낮술을 하시나요?";
             else if (Button.scoreSum >= 0)
-                TextTalking.text = "ㄹㅇ 숭하시다";
+                TextTalking.text = "<size=51.7>선반님 제가 너무 부끄러워요................................";
         }
         else if (Button._stage == "stage4") //스포티걸
         {
             if (Button.scoreSum == 100)
-                TextTalking.text = "흥 이 정도는 돼야 내 파트너지";
+                TextTalking.text = "<size=72.9>흥 이 정도는 되야 내 파트너지";
             else if (Button.scoreSum >= 80)
-                TextTalking.text = "봐줄만 하네 ㅋ";
+                TextTalking.text = "<size=90.8>봐줄만 하네";
             else if (Button.scoreSum >= 60)
-                TextTalking.text = "다시 생각해보지그래?";
+                TextTalking.text = "<size=81.4>다시 셍각헤보지그레?";
             else if (Button.scoreSum >= 30)
-                TextTalking.text = "너 이런 옷으로 나랑 파티에 갈 생각이야?";
+                TextTalking.text = "<size=69.5>너 이런 옷으로 나랑 파티에 갈 셍각이야?";
             else if (Button.scoreSum >= 0)
-                TextTalking.text = "화분으로 패션감각도 리셋됐니?";
+                TextTalking.text = "<size=69.5>화분맡고 페션감각도 리샛됫니?";
         }
         else //후배들과의 조별과제
         {
             if (Button.scoreSum == 100)
-                TextTalking.text = "와 SUNBA,, 그렇게 생각보다 댄디보이인 걸?";
+                TextTalking.text = "<size=69.5>와 SUNBA,, 그렇게 생각보다 댄디보이인 걸?";
             else if (Button.scoreSum >= 80)
-                TextTalking.text = "사스카 10학번 센빠이! 옷 입는 것부터가 다르다구!!!";
+                TextTalking.text = "<size=67>사스카 10학번 센빠이! 옷 입는 것부터가 다르다구!!!";
             else if (Button.scoreSum >= 60)
-                TextTalking.text = "혼자 10년대에 멈춰계신거 아니죠?";
+                TextTalking.text = "<size=60.8>선배님 다음부터 안 나오셔도 돼요..! 그냥 발표랑 자료조사만 맡아주세요";
             else if (Button.scoreSum >= 30)
-                TextTalking.text = "선배님 다음부터 안 나오셔도 돼요..! 그냥 발표랑 자료조사만 맡아주세요";
+                TextTalking.text = "<size=62>선배님 라떼는 그렇게 안 입었어요";
             else if (Button.scoreSum >= 0)
-                TextTalking.text = "제 이름 그냥 빼주세요";
+                TextTalking.text = "<color=red><size=83.5>제 이름 그냥 빼주세요;";
         }
         //-------------------------------
         GameObject.Find("backgrounds").transform.Find(Button._stage.ToString()).gameObject.SetActive(true);

@@ -22,7 +22,7 @@ public class stageNum : MonoBehaviour
         else if (Button._stage == "stage2")
         {
             StartCoroutine(FadeCoroutine());
-            TextStage.text = "모니카와 약혼식";
+            TextStage.text = "<color=red>모니카와 약혼식";
             audioSource.Play();
         }
         else if (Button._stage == "stage3")
