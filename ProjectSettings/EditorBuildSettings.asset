@@ -15,9 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/choose_stage.unity
     guid: 36f8a228da1f00541bc5328053411072
   - enabled: 1
-    path: Assets/Scenes/resultscene.unity
-    guid: 2bb35b7e7ced42a47a328de6c51b2486
-  - enabled: 1
     path: Assets/Scenes/main_clothes.unity
     guid: 325b257f90c23bb418fd222453e95dc5
+  - enabled: 1
+    path: Assets/Scenes/resultscene.unity
+    guid: 2bb35b7e7ced42a47a328de6c51b2486
   m_configObjects: {}

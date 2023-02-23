@@ -9,6 +9,7 @@ public class results : MonoBehaviour
 {
     public TextMeshProUGUI TextScore; //점수 텍스트
     public TextMeshProUGUI TextTalking; //파트너 대사 텍스트
+    public TextMeshProUGUI MonikaTalking; //모니카 대사 텍스트
     public AudioClip[] audioclip;
     AudioSource audiosource;
 
@@ -16,6 +17,7 @@ public class results : MonoBehaviour
     {
         TextScore.text = Button.scoreSum.ToString(); //Button 스크립트 내의 scoreSum 불러와서 str화
         audiosource = GetComponent<AudioSource>();
+
         if (Button.scoreSum == 100)
         {
             audiosource.clip = audioclip[0];
@@ -55,10 +57,12 @@ public class results : MonoBehaviour
             else if (Button.scoreSum >= 0)
                 TextTalking.text = "<size=67.4>트하! 여러분~ 오늘은 저 '혼자서' 트위치 파티에 와봤습니다!";
         }
+
         else if (Button._stage == "stage2") //모니카
         {
-            TextTalking.text = "<color=red><size=117.9>선바, 나랑 영원히 함께 하자";
+            MonikaTalking.text = "<color=red><size=86.75>선바, 나랑 영원히 함께 하자.";
         }
+
         else if (Button._stage == "stage3") //팬미팅
         {
             if (Button.scoreSum == 100)

@@ -88,7 +88,7 @@ public class Button : MonoBehaviour //특정 버튼을 누르면 주어진 코드가 동작하는 
         Debug.Log("완성!!!");
 
         //완료 버튼을 누르면 활성화 되어있는 오브젝트들의 점수 합산하기
-        string[] tagg = {"hair", "bottom", "top", "acc", "shoes" };
+        string[] tagg = {"hair", "bottom", "top", "acc", "shoes", "acc-eyewear" };
 
         foreach (string k in tagg)
         {
@@ -165,10 +165,11 @@ public class Button : MonoBehaviour //특정 버튼을 누르면 주어진 코드가 동작하는 
     {
         transform.GetChild(0).gameObject.SetActive(false); //child 0을 비활성화
     }
+
     public void resetting()
     {//리셋버튼을 누르면
         
-        string[] tagg = { "acc-beard","hair", "top", "bottom", "acc", "shoes" };
+        string[] tagg = { "acc-beard","hair", "top", "bottom", "acc", "acc-eyewear", "shoes" };
         foreach (string e in tagg) {
             var category = GameObject.FindGameObjectsWithTag(e);
                 if (category.Length != 0) category[0].gameObject.SetActive(false);

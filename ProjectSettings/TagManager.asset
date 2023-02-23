@@ -3,7 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - stage2
+  - stage5
+  - stage4
+  - stage3
+  - stage1
+  - hair
+  - shoes
+  - acc
+  - closett
+  - top
+  - bottom
+  - acc-beard
+  - acc-eyewear
   layers:
   - Default
   - TransparentFX

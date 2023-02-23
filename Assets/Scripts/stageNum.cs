@@ -10,6 +10,7 @@ public class stageNum : MonoBehaviour
     public Image image;
     float time = 0;
     public TextMeshProUGUI TextStage; //스테이지 텍스트
+    public TextMeshProUGUI MonikaStage; //모니카 스테이지 텍스트
 
     void Start()
     {
@@ -22,7 +23,7 @@ public class stageNum : MonoBehaviour
         else if (Button._stage == "stage2")
         {
             StartCoroutine(FadeCoroutine());
-            TextStage.text = "<color=red>모니카와 약혼식";
+            MonikaStage.text = "<color=red>모니카와 약혼식";
             audioSource.Play();
         }
         else if (Button._stage == "stage3")
