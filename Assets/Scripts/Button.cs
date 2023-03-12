@@ -132,17 +132,24 @@ public class Button : MonoBehaviour //특정 버튼을 누르면 주어진 코드가 동작하는 
         if (tagg == "hair") //머리 적용한 경우 세트 비활성화
             set.gameObject.SetActive(false);
 
-        var category = GameObject.FindGameObjectsWithTag(tagg);
-        for (int i = 0; i < category.Length; i++)
-        {
-            category[i].gameObject.SetActive(false);
-        }
 
-        img.SetActive(true); //사용자가 클릭한 옷 그림 활성화
+        if (img.activeSelf == false) { //착용한 상태가 아니라면
+            var category = GameObject.FindGameObjectsWithTag(tagg);
+            for (int i = 0; i < category.Length; i++) 
+            {
+                category[i].gameObject.SetActive(false); // 같은 카테고리 옷 중복 활성화 방지
+            }
+
+            img.SetActive(true); //사용자가 클릭한 옷 그림 활성화
+        }
+        else //이미 착용한 상태에서 한 번 더 클릭한거면
+        {
+            img.SetActive(false); //해당 옷 비활성화
+        }
 
         if (set.gameObject.activeSelf == true)
         { //상의가 세트인경우 하의, 머리 비활성화
-            category = GameObject.FindGameObjectsWithTag("bottom");
+            var category = GameObject.FindGameObjectsWithTag("bottom");
             for (int i = 0; i < category.Length; i++)
             {
                 category[i].gameObject.SetActive(false);
